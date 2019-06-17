@@ -26,9 +26,13 @@ class Notes extends Component {
     };
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, prevState) {
     // sets focus to to the item
-    this.focusHere.current.focus();
+    if(this.state.modalOpen !== prevState.modalOpen) {
+      this.focusHere.current.focus();
+    }
+    // this.focusHere.current.focus();
+
   }
 
   componentDidMount() {
@@ -175,7 +179,7 @@ class Notes extends Component {
                 <legend className="visuallyHidden">Category:</legend>
 
                 <input
-                  className="radioButtonDot"
+                  className="radioButtonDot "
                   type="radio"
                   name="userCategory"
                   id="college"
@@ -193,7 +197,7 @@ class Notes extends Component {
                 />
                 <label htmlFor="university">University</label>
                 <input
-                  className="radioButtonDot"
+                  className="radioButtonDot "
                   type="radio"
                   name="userCategory"
                   id="tradeSchool"

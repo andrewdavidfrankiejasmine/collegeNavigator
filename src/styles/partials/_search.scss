@@ -63,9 +63,12 @@
   box-shadow: 0 2px #666;
   @include color($activeColor, $black);
 }
+.radioButtonDot:focus + label {
+  @include color($activeColor, $black);
+}
 .radioButtonDot {
   position: absolute;
-  right: 100%;
+  opacity:0;
 }
 
 .userInput,
